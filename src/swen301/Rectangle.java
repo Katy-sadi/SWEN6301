@@ -14,6 +14,8 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
     private double height,lenght;
     private int RectId;
     private String color;
+    
+    //The first constructor with values from the user, no default value
 
     public Rectangle(double height, double lenght, int RectId, String color) {
         this.height = height;
@@ -21,6 +23,9 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
         this.RectId = RectId;
         this.color = color;
     }
+    
+    /*The second constructor there is one default value which is the color, the user can create object of rectangle by 
+    entering the height, lenght and the ID */
 
     public Rectangle(double height, double lenght, int RectId) {
         this.height = height;
@@ -28,6 +33,8 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
         this.RectId = RectId;
         this.color = "RED";
     }
+    
+    //getter methods
 
     public double getHeight() {
         return height;
@@ -44,6 +51,8 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
     public String getColor() {
         return color;
     }
+    
+    //Setter methods, But the ID can't be changed after the object is created
 
     public void setHeight(double height) {
         this.height = height;
@@ -58,6 +67,9 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
     }
    
     
+    //Implementing the Methods from the base class
+    //here we can see that the result will be differerent comparing it to the Triangle class
+    //So each Class that is extended from the base class will implement the methods in a different way
     
 
     @Override
@@ -84,6 +96,9 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
                 +"\nThe Color of the Rectangle is:\t"+this.getColor()+
                 "\nFor more information you can use the methods\n";
     }
+    
+    
+    //Implementing the Methods from the Interface that I've created
 
     @Override
     public int compareArea(Rectangle o) {
@@ -111,6 +126,9 @@ public class Rectangle extends TwoDimensionalShape implements ShapesOperations<R
         return cmp;
     }
     
+    
+    // In this Method I've compared the areas of two different objects, 
+    //the first is Rectangle the other is Triangle
     public int compareAreaWithTriangle(Triangle Tr){
         double TriArea= Tr.getArea();
         double RecArea=this.getArea();
